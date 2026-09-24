@@ -56,7 +56,7 @@ public class CustomerService {
         }
 
         Game newGame = new Game();
-        newGame.setApiGameId(gameId);
+        newGame.setId(gameId);
         newGame.setName(gameName);
         customer.addFavoriteGames(newGame);
 

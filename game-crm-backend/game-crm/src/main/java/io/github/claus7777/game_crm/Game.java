@@ -44,4 +44,13 @@ public class Game {
     public String getName(){
         return this.name;
     }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer){
+        this.customer = customer;
+    }
+    
 }
