@@ -51,4 +51,9 @@ public class Customer {
     public List<Game> getFavoriteGames(){
         return this.favoriteGames;
     }
+
+    public void addFavoriteGames(Game game){
+        favoriteGames.add(game);
+        game.setCustomer(this);
+    }
 }

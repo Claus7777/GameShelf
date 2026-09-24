@@ -47,7 +47,7 @@ public class CustomerService {
         customerRepository.delete(customerToDelete);
     }
 
-    public void addGameToCustomer(Long customerId, Long gameId, String gameName){
+    public Game addGameToCustomer(Long customerId, Long gameId, String gameName){
         Customer customer = customerRepository.findById(customerId)
             .orElseThrow(() -> new RuntimeException("Customer not found with id: " + customerId));
 
@@ -56,11 +56,12 @@ public class CustomerService {
         }
 
         Game newGame = new Game();
-        newGame.setId(gameId);
+        newGame.setApiGameId(gameId);
         newGame.setName(gameName);
-        customer.getFavoriteGames().add(newGame);
+        customer.addFavoriteGames(newGame);
 
         customerRepository.save(customer);
+        return newGame;
     }
 
     public void removeGameFromCustomer(Long customerId, Long gameId){

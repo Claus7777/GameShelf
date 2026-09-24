@@ -11,7 +11,7 @@ public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long gameBrainId;
+    private Long ApiGameId;
 
     @NotBlank(message = "Name is required.")
     String name;
@@ -29,12 +29,12 @@ public class Game {
         return this.id;
     }
 
-    public void setGameBrainId(Long gameBrainId){
-        this.gameBrainId = gameBrainId;
+    public void setApiGameId(Long ApiGameId){
+        this.ApiGameId = ApiGameId;
     }
 
-    public Long getGameBrainId(){
-        return this.gameBrainId;
+    public Long getApiGameId(){
+        return this.ApiGameId;
     }
 
     public void setName(String name){

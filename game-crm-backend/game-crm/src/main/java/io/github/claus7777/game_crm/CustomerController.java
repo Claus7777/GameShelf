@@ -1,4 +1,5 @@
 package io.github.claus7777.game_crm;
+import io.github.claus7777.game_crm.dto.AddGameRequest;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -19,10 +20,6 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200") //para o Angular
 public class CustomerController {
 
-    public class AddGameRequest{
-    private Long id;
-    private String gameName;
-    }
 
     private final CustomerService customerService;
 
@@ -63,13 +60,6 @@ public class CustomerController {
     public Game addGameToCustomer(
         @PathVariable Long customerId,
         @RequestBody AddGameRequest request) {
-            return customerService.addGameToCustomer(customerId, request.getAPIGameId(), request.getGameName());
+            return customerService.addGameToCustomer(customerId, request.getApiGameId(), request.getGameName());
         }
-    )
-
-
-
-
-
-
 }

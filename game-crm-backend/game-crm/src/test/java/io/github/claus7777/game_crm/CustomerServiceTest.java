@@ -148,6 +148,7 @@ public class CustomerServiceTest {
         newGame.setName("Big Game");
 
         Mockito.when(customerRepository.findById(newCustomer.getId())).thenReturn(Optional.of(newCustomer));
+        
         assertThrows(RuntimeException.class, () -> {
             customerService.removeGameFromCustomer(newCustomer.getId(), newGame.getId());
         });
